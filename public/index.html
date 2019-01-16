@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem nam magnam explicabo aut enim mollitia suscipit omnis a beatae voluptate vitae, fugiat, quo excepturi doloribus adipisci sit, officia obcaecati quod!
+    <button id="exit">登出</button>
+</body>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script>
+
+$(function(){
+    $.get("http://localhost:3000/posts",function(res){
+        console.log(res)
+    })
+    $("#exit").on("click",function(res){
+        window.location.href = '/signout'
+    })
+})
+</script>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <p>
+            <label for="name">name:</label>
+            <input type="text" id="name">
+        </p>
+        <p>
+            <label for="password">password:</label>
+            <input type="password" id="password">
+        </p>
+        <button>提交</button>
+</body>    
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script>
+    $('button').on("click",function(){
+        var name = $("#name").val()
+        var password = $("#password").val()
+        $.ajax({
+            type: "POST",
+            url: 'http://localhost:3000/signin',
+            data: {
+                name,
+                password
+            },
+            success: function(res){
+                if(res.code === 200){
+                    window.localStorage.setItem("userInfo",res)
+                    window.location.href = './'
+                }else{
+                    alert(res.msg)
+                }
+            }
+        });
+
+    })
+</script>
+</html>
