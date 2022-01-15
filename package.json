@@ -24,7 +24,7 @@
     "express": "^4.16.4",
     "express-formidable": "^1.2.0",
     "express-session": "^1.15.6",
-    "marked": "^0.6.0",
+    "marked": "^4.0.10",
     "moment": "^2.23.0",
     "mongolass": "^4.4.2",
     "multer": "^1.4.1",
